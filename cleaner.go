@@ -40,12 +40,12 @@ func (s Cleaner) preprocess(ocrRequest *OcrRequest) error {
         "PREPROCESSOR_WORKER",
         "cleaner.sh on %s -> %s with %s",
         tmpFileNameInput,
-        tmpFileNameOutput
+        tmpFileNameOutput,
     )
     out, err := exec.Command(
         "cleaner.sh",
         tmpFileNameInput,
-        tmpFileNameOutput
+        tmpFileNameOutput,
     ).CombinedOutput()
     if err != nil {
         logg.LogFatal("Error running command: %s.  out: %s", err, out)
