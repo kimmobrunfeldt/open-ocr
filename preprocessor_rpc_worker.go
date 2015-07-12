@@ -27,6 +27,7 @@ func NewPreprocessorRpcWorker(rc RabbitConfig, preprocessor string) (*Preprocess
 
 	preprocessorMap := make(map[string]Preprocessor)
 	preprocessorMap[PREPROCESSOR_STROKE_WIDTH_TRANSFORM] = StrokeWidthTransformer{}
+	preprocessorMap[PREPROCESSOR_STROKE_CLEANER] = Cleaner{}
 	preprocessorMap[PREPROCESSOR_IDENTITY] = IdentityPreprocessor{}
 
 	_, ok := preprocessorMap[preprocessor]
